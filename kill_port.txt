@@ -1,0 +1,10 @@
+um einen port zu finden un sich beenden : 
+schritt 1
+
+netstat -ano | findstr :3000
+
+2. TCP    0.0.0.0:3000   ...   PID example_PID 12345
+
+3. taskkill /PID 12345 /F
+
+
