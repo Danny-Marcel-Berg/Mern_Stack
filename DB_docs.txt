@@ -1,0 +1,10 @@
+mongo db :
+
+mongodb+srv://dannyberg1001_db_user:<bjpYR5b7WneOIwHi>@cluster0.pdk0ngz.mongodb.net/?appName=Cluster0
+
+benutzername 
+
+dannyberg1001_db_user
+
+Passwort
+bjpYR5b7WneOIwHi

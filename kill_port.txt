@@ -3,8 +3,8 @@ schritt 1
 
 netstat -ano | findstr :3000
 
-2. TCP    0.0.0.0:3000   ...   PID example_PID 12345
+2. TCP    0.0.0.0:3000   ...   PID_example 12345
 
 3. taskkill /PID 12345 /F
-
+14360
 
