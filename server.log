@@ -1,0 +1,3 @@
+◇ injected env (0) from .env
+MONGO_URL not configured. Running with in-memory storage fallback.
+Server started on port 3000

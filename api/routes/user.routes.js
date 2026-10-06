@@ -1,8 +1,9 @@
 import express from "express";
-import { test } from "../controller/user.controller";
 
 const router = express.Router();
 
-router.get("/user", test
+router.get("/user", (req, res) => {
+  res.json({ message: "User route active" });
+});
 
 export default router;
