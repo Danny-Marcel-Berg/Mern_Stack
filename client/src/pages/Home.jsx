@@ -12,15 +12,14 @@ import {
   FaStar,
   FaArrowRight,
   FaShieldAlt,
-  FaCalendarAlt,
   FaRulerCombined,
   FaUserTie,
   FaPhoneAlt,
   FaEnvelope,
   FaTimes,
   FaExchangeAlt,
+  FaBolt,
 } from "react-icons/fa";
-import ListingItem from "../components/ListingItem";
 
 const Home = () => {
   const [offerListings, setOfferListings] = useState([]);
@@ -48,7 +47,7 @@ const Home = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   useEffect(() => {
-    document.title = "Apex Construction & Development Co. | General Contractor & Architectural Engineering";
+    document.title = "Apex Construction & Development Co. | Bright, Modern General Contractor";
 
     const fetchFeaturedProjects = async () => {
       try {
@@ -150,104 +149,103 @@ const Home = () => {
       : offerListings.filter((p) => p.type === activeFilter);
 
   return (
-    <div className="w-full bg-slate-50 text-slate-800">
-      {/* HERO SECTION */}
-      <section className="relative bg-slate-950 text-white overflow-hidden py-20 lg:py-28">
-        <div className="absolute inset-0 z-0 opacity-25 bg-[url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/60 z-0" />
+    <div className="w-full bg-amber-50/30 text-slate-900">
+      {/* BRIGHT HERO SECTION */}
+      <section className="relative bg-gradient-to-br from-amber-400 via-amber-300 to-amber-500 text-slate-950 overflow-hidden py-16 lg:py-24 border-b-4 border-amber-500 shadow-lg">
+        <div className="absolute inset-0 z-0 opacity-15 bg-[url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center mix-blend-overlay" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-7/12 space-y-6 text-left">
-            <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-500/40 text-amber-400 text-xs sm:text-sm font-semibold px-3 py-1.5 rounded-full">
-              <FaHardHat /> Premier General Contractor & Architectural Engineering
+            <div className="inline-flex items-center gap-2 bg-slate-950 text-amber-300 text-xs sm:text-sm font-extrabold px-4 py-2 rounded-full shadow-md uppercase tracking-wider">
+              <FaHardHat className="text-amber-400" /> Premier General Contractor & Engineering Firm
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
-              Rebuilding & Constructing With <span className="text-amber-400">Precision</span> & <span className="text-amber-400">Innovation</span>.
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-950 leading-tight tracking-tight drop-shadow-sm">
+              Rebuilding & Constructing With <span className="underline decoration-slate-950 decoration-wavy">Precision</span> & <span className="bg-slate-950 text-amber-300 px-2 py-0.5 rounded-lg">Innovation</span>.
             </h1>
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-              From high-rise commercial headquarters and industrial complexes to custom luxury residences and architectural redesigns. Apex Build delivers superior craftsmanship, on-time execution, and transparent cost estimates.
+            <p className="text-slate-900 font-semibold text-base sm:text-lg leading-relaxed max-w-2xl">
+              From commercial towers and industrial distribution hubs to custom luxury homes and modern architectural website rebuilds. Apex Build delivers superior craftsmanship, on-time execution, and transparent cost estimates.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <a
                 href="#estimator"
-                className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-amber-500/25 transition-all flex items-center gap-2 text-sm sm:text-base"
+                className="bg-slate-950 hover:bg-slate-800 text-amber-300 font-black px-7 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all flex items-center gap-2 text-sm sm:text-base uppercase tracking-wider"
               >
-                <FaCalculator /> Instant Cost Estimator
+                <FaCalculator className="text-amber-400" /> Instant Cost Estimator
               </a>
               <Link
                 to="/search"
-                className="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-6 py-3.5 rounded-xl border border-slate-700 transition-all flex items-center gap-2 text-sm sm:text-base"
+                className="bg-white hover:bg-slate-100 text-slate-950 font-extrabold px-7 py-4 rounded-2xl border-2 border-slate-950 shadow-md transition-all flex items-center gap-2 text-sm sm:text-base uppercase tracking-wider"
               >
-                Explore Projects <FaArrowRight className="text-amber-400" />
+                Explore Portfolio <FaArrowRight className="text-amber-600" />
               </Link>
             </div>
 
             {/* Key Stats Ticker */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-slate-800">
-              <div>
-                <div className="text-2xl sm:text-3xl font-black text-amber-400">250+</div>
-                <div className="text-xs text-slate-400 uppercase tracking-wider mt-0.5 font-medium">Projects Delivered</div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t-2 border-slate-950/20">
+              <div className="bg-white/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-950/10 shadow-sm text-center">
+                <div className="text-2xl sm:text-3xl font-black text-slate-950">250+</div>
+                <div className="text-[10px] text-slate-800 uppercase tracking-widest font-extrabold mt-0.5">Projects Delivered</div>
               </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-black text-amber-400">18+ Yrs</div>
-                <div className="text-xs text-slate-400 uppercase tracking-wider mt-0.5 font-medium">Industry Proven</div>
+              <div className="bg-white/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-950/10 shadow-sm text-center">
+                <div className="text-2xl sm:text-3xl font-black text-slate-950">18+ Yrs</div>
+                <div className="text-[10px] text-slate-800 uppercase tracking-widest font-extrabold mt-0.5">Industry Proven</div>
               </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-black text-amber-400">99.8%</div>
-                <div className="text-xs text-slate-400 uppercase tracking-wider mt-0.5 font-medium">On-Time Completion</div>
+              <div className="bg-white/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-950/10 shadow-sm text-center">
+                <div className="text-2xl sm:text-3xl font-black text-slate-950">99.8%</div>
+                <div className="text-[10px] text-slate-800 uppercase tracking-widest font-extrabold mt-0.5">On-Time Delivery</div>
               </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-black text-amber-400">100%</div>
-                <div className="text-xs text-slate-400 uppercase tracking-wider mt-0.5 font-medium">OSHA Certified</div>
+              <div className="bg-white/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-950/10 shadow-sm text-center">
+                <div className="text-2xl sm:text-3xl font-black text-slate-950">100%</div>
+                <div className="text-[10px] text-slate-800 uppercase tracking-widest font-extrabold mt-0.5">OSHA Certified</div>
               </div>
             </div>
           </div>
 
           {/* Quick Hero Feature Card */}
           <div className="lg:w-5/12 w-full">
-            <div className="bg-slate-900/90 border border-slate-800 p-6 sm:p-8 rounded-2xl shadow-2xl backdrop-blur-sm space-y-6">
-              <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-                <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  <FaShieldAlt className="text-amber-400" /> Why Industry Leaders Choose Apex
+            <div className="bg-white/95 border-2 border-slate-950 p-6 sm:p-8 rounded-3xl shadow-2xl space-y-6">
+              <div className="flex items-center justify-between border-b-2 border-slate-200 pb-4">
+                <h3 className="text-lg font-black text-slate-950 flex items-center gap-2">
+                  <FaShieldAlt className="text-amber-500" /> Why Industry Leaders Choose Apex
                 </h3>
-                <span className="bg-amber-500/10 text-amber-400 text-xs font-bold px-2.5 py-1 rounded-full border border-amber-500/20">
+                <span className="bg-amber-400 text-slate-950 text-xs font-black px-3 py-1 rounded-full border border-amber-500">
                   Licensed #GC-982341
                 </span>
               </div>
 
-              <ul className="space-y-4 text-sm text-slate-300">
+              <ul className="space-y-4 text-xs sm:text-sm text-slate-800 font-medium">
                 <li className="flex items-start gap-3">
-                  <FaCheckCircle className="text-amber-400 text-lg shrink-0 mt-0.5" />
+                  <FaCheckCircle className="text-amber-500 text-lg shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white block">Full Turnkey Execution:</strong>
+                    <strong className="text-slate-950 font-black block">Full Turnkey Execution:</strong>
                     From architectural permitting and 3D BIM design to heavy structural framing and finishing.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <FaCheckCircle className="text-amber-400 text-lg shrink-0 mt-0.5" />
+                  <FaCheckCircle className="text-amber-500 text-lg shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white block">Fixed-Price Price Guarantee:</strong>
+                    <strong className="text-slate-950 font-black block">Fixed-Price Guarantee:</strong>
                     Transparent, itemized budget breakdowns with zero hidden change-order surprises.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <FaCheckCircle className="text-amber-400 text-lg shrink-0 mt-0.5" />
+                  <FaCheckCircle className="text-amber-500 text-lg shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white block">Sustainable & LEED Gold Standards:</strong>
+                    <strong className="text-slate-950 font-black block">Sustainable & LEED Gold Standards:</strong>
                     Energy-efficient materials, green building options, and smart HVAC integration.
                   </div>
                 </li>
               </ul>
 
-              <div className="bg-amber-500/10 border border-amber-500/30 p-4 rounded-xl flex items-center justify-between">
+              <div className="bg-amber-100 border-2 border-amber-300 p-4 rounded-2xl flex items-center justify-between shadow-sm">
                 <div>
-                  <div className="text-xs text-slate-400">Ready to discuss your site?</div>
-                  <div className="text-white font-bold text-sm">Consultation is 100% Free</div>
+                  <div className="text-xs font-bold text-slate-700">Ready to discuss your site?</div>
+                  <div className="text-slate-950 font-black text-sm">Consultation is 100% Free</div>
                 </div>
                 <a
                   href="#consultation"
-                  className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3.5 py-2 rounded-lg text-xs"
+                  className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-4 py-2.5 rounded-xl text-xs uppercase tracking-wider shadow"
                 >
                   Book Assessment
                 </a>
@@ -260,167 +258,167 @@ const Home = () => {
       {/* CORE SERVICES SECTION */}
       <section id="services" className="py-20 max-w-7xl mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="text-amber-600 font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2">
+          <div className="text-amber-600 font-black text-xs uppercase tracking-widest flex items-center justify-center gap-2 bg-amber-200/60 w-fit mx-auto px-4 py-1.5 rounded-full border border-amber-300">
             <FaTools /> Engineering & Construction Services
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-950">
             Comprehensive Building & Remodeling Solutions
           </h2>
-          <p className="text-slate-600 text-base">
+          <p className="text-slate-700 text-base font-medium">
             We provide end-to-end general contracting, structural engineering, and architectural redesign tailored to your specific project scope and budget.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Service 1 */}
-          <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div className="bg-white p-8 rounded-3xl border-2 border-amber-200 shadow-md hover:shadow-2xl hover:border-amber-400 transition-all group flex flex-col justify-between">
             <div className="space-y-4">
-              <div className="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+              <div className="w-16 h-16 bg-amber-400 text-slate-950 rounded-2xl flex items-center justify-center text-3xl font-black shadow-md group-hover:scale-110 transition-transform">
                 <FaBuilding />
               </div>
-              <h3 className="text-xl font-bold text-slate-900">Commercial Construction</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <h3 className="text-xl font-black text-slate-950">Commercial Construction</h3>
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
                 Specialized in multi-story office towers, corporate headquarters, retail centers, and hospitality developments built to strict commercial codes and safety standards.
               </p>
-              <ul className="text-xs text-slate-500 space-y-2 pt-2 border-t border-slate-100">
+              <ul className="text-xs text-slate-600 font-semibold space-y-2 pt-3 border-t border-slate-100">
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> Steel & Concrete Structural Framing</li>
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> Commercial HVAC & Elevator Integration</li>
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> ADA Compliance & Code Inspection</li>
               </ul>
             </div>
-            <a href="#consultation" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-600 hover:text-amber-700">
+            <a href="#consultation" className="mt-6 inline-flex items-center gap-2 text-xs font-black text-amber-700 hover:text-slate-950 uppercase tracking-wider">
               Request Commercial Quote &rarr;
             </a>
           </div>
 
           {/* Service 2 */}
-          <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div className="bg-white p-8 rounded-3xl border-2 border-amber-200 shadow-md hover:shadow-2xl hover:border-amber-400 transition-all group flex flex-col justify-between">
             <div className="space-y-4">
-              <div className="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+              <div className="w-16 h-16 bg-amber-400 text-slate-950 rounded-2xl flex items-center justify-center text-3xl font-black shadow-md group-hover:scale-110 transition-transform">
                 <FaHome />
               </div>
-              <h3 className="text-xl font-bold text-slate-900">Custom Residential Homes</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <h3 className="text-xl font-black text-slate-950">Custom Residential Homes</h3>
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
                 Building bespoke luxury homes from the ground up. We work closely with architects and homeowners to craft unique floor plans, premium finishes, and smart living spaces.
               </p>
-              <ul className="text-xs text-slate-500 space-y-2 pt-2 border-t border-slate-100">
+              <ul className="text-xs text-slate-600 font-semibold space-y-2 pt-3 border-t border-slate-100">
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> Custom Architectural Floorplans</li>
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> High-End Millwork & Kitchen Crafting</li>
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> Energy-Efficient Heat Pumps & Solar</li>
               </ul>
             </div>
-            <a href="#consultation" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-600 hover:text-amber-700">
+            <a href="#consultation" className="mt-6 inline-flex items-center gap-2 text-xs font-black text-amber-700 hover:text-slate-950 uppercase tracking-wider">
               Request Custom Home Quote &rarr;
             </a>
           </div>
 
           {/* Service 3 */}
-          <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div className="bg-white p-8 rounded-3xl border-2 border-amber-200 shadow-md hover:shadow-2xl hover:border-amber-400 transition-all group flex flex-col justify-between">
             <div className="space-y-4">
-              <div className="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+              <div className="w-16 h-16 bg-amber-400 text-slate-950 rounded-2xl flex items-center justify-center text-3xl font-black shadow-md group-hover:scale-110 transition-transform">
                 <FaExchangeAlt />
               </div>
-              <h3 className="text-xl font-bold text-slate-900">Structural Renovation & Rebuilds</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <h3 className="text-xl font-black text-slate-950">Structural Renovation & Rebuilds</h3>
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
                 Transforming outdated, underperforming structures into modern, space-efficient properties. Includes load-bearing wall removal, seismic retrofitting, and facade revamps.
               </p>
-              <ul className="text-xs text-slate-500 space-y-2 pt-2 border-t border-slate-100">
+              <ul className="text-xs text-slate-600 font-semibold space-y-2 pt-3 border-t border-slate-100">
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> Historic Brick & Timber Preservation</li>
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> Open-Concept Floorplan Expansion</li>
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> Complete Mechanical & Plumbing Upgrade</li>
               </ul>
             </div>
-            <a href="#consultation" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-600 hover:text-amber-700">
+            <a href="#consultation" className="mt-6 inline-flex items-center gap-2 text-xs font-black text-amber-700 hover:text-slate-950 uppercase tracking-wider">
               Request Renovation Assessment &rarr;
             </a>
           </div>
 
           {/* Service 4 */}
-          <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div className="bg-white p-8 rounded-3xl border-2 border-amber-200 shadow-md hover:shadow-2xl hover:border-amber-400 transition-all group flex flex-col justify-between">
             <div className="space-y-4">
-              <div className="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+              <div className="w-16 h-16 bg-amber-400 text-slate-950 rounded-2xl flex items-center justify-center text-3xl font-black shadow-md group-hover:scale-110 transition-transform">
                 <FaWarehouse />
               </div>
-              <h3 className="text-xl font-bold text-slate-900">Industrial & Distribution Logistics</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <h3 className="text-xl font-black text-slate-950">Industrial & Distribution Logistics</h3>
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
                 High-capacity industrial facilities, distribution centers, cold storage warehouses, and tech manufacturing parks designed for optimal supply-chain performance.
               </p>
-              <ul className="text-xs text-slate-500 space-y-2 pt-2 border-t border-slate-100">
+              <ul className="text-xs text-slate-600 font-semibold space-y-2 pt-3 border-t border-slate-100">
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> Heavy-Load Concrete Slabs</li>
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> High-Clearance Automated Docks</li>
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> Industrial Power Grid Distribution</li>
               </ul>
             </div>
-            <a href="#consultation" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-600 hover:text-amber-700">
+            <a href="#consultation" className="mt-6 inline-flex items-center gap-2 text-xs font-black text-amber-700 hover:text-slate-950 uppercase tracking-wider">
               Request Industrial Quote &rarr;
             </a>
           </div>
 
           {/* Service 5 */}
-          <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div className="bg-white p-8 rounded-3xl border-2 border-amber-200 shadow-md hover:shadow-2xl hover:border-amber-400 transition-all group flex flex-col justify-between">
             <div className="space-y-4">
-              <div className="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+              <div className="w-16 h-16 bg-amber-400 text-slate-950 rounded-2xl flex items-center justify-center text-3xl font-black shadow-md group-hover:scale-110 transition-transform">
                 <FaDraftingCompass />
               </div>
-              <h3 className="text-xl font-bold text-slate-900">Architectural Design & 3D BIM</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <h3 className="text-xl font-black text-slate-950">Architectural Design & 3D BIM</h3>
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
                 Leveraging Building Information Modeling (BIM) and 3D architectural rendering to visualize every angle, avoid spatial conflicts, and refine structural plans prior to break-ground.
               </p>
-              <ul className="text-xs text-slate-500 space-y-2 pt-2 border-t border-slate-100">
+              <ul className="text-xs text-slate-600 font-semibold space-y-2 pt-3 border-t border-slate-100">
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> Photorealistic 3D Walkthroughs</li>
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> Structural Clash Detection</li>
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> Municipal Blueprint Expediting</li>
               </ul>
             </div>
-            <a href="#consultation" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-600 hover:text-amber-700">
+            <a href="#consultation" className="mt-6 inline-flex items-center gap-2 text-xs font-black text-amber-700 hover:text-slate-950 uppercase tracking-wider">
               Explore Design Packages &rarr;
             </a>
           </div>
 
           {/* Service 6 */}
-          <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div className="bg-white p-8 rounded-3xl border-2 border-amber-200 shadow-md hover:shadow-2xl hover:border-amber-400 transition-all group flex flex-col justify-between">
             <div className="space-y-4">
-              <div className="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-xl flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+              <div className="w-16 h-16 bg-amber-400 text-slate-950 rounded-2xl flex items-center justify-center text-3xl font-black shadow-md group-hover:scale-110 transition-transform">
                 <FaUserTie />
               </div>
-              <h3 className="text-xl font-bold text-slate-900">Project Management & Consulting</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <h3 className="text-xl font-black text-slate-950">Project Management & Consulting</h3>
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
                 Independent construction management, quality control audits, site supervision, and permit management to keep your construction project strictly on schedule and within budget.
               </p>
-              <ul className="text-xs text-slate-500 space-y-2 pt-2 border-t border-slate-100">
+              <ul className="text-xs text-slate-600 font-semibold space-y-2 pt-3 border-t border-slate-100">
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> Subcontractor Supervision</li>
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> Material Sourcing & Cost Audits</li>
                 <li className="flex items-center gap-2"><FaCheckCircle className="text-amber-500" /> Daily Site Safety Inspections</li>
               </ul>
             </div>
-            <a href="#consultation" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-600 hover:text-amber-700">
+            <a href="#consultation" className="mt-6 inline-flex items-center gap-2 text-xs font-black text-amber-700 hover:text-slate-950 uppercase tracking-wider">
               Speak With Project Manager &rarr;
             </a>
           </div>
         </div>
       </section>
 
-      {/* INTERACTIVE INSTANT COST ESTIMATOR */}
-      <section id="estimator" className="py-20 bg-slate-900 text-white relative overflow-hidden">
+      {/* BRIGHT INTERACTIVE INSTANT COST ESTIMATOR */}
+      <section id="estimator" className="py-20 bg-amber-100/80 border-y-4 border-amber-300 relative">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-            <span className="bg-amber-500/20 text-amber-400 font-bold text-xs uppercase px-3 py-1 rounded-full border border-amber-500/30">
-              <FaCalculator className="inline mr-1" /> Interactive Tool
+            <span className="bg-amber-400 text-slate-950 font-black text-xs uppercase px-4 py-1.5 rounded-full border border-amber-500 shadow-sm inline-flex items-center gap-1">
+              <FaCalculator /> Interactive Tool
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-white">
-              Instant Project Cost Calculator
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-950">
+              Instant Construction & Build Cost Calculator
             </h2>
-            <p className="text-slate-300 text-sm sm:text-base">
+            <p className="text-slate-800 font-medium text-sm sm:text-base">
               Calculate an immediate, itemized estimate for your upcoming construction, build, or renovation project in real time.
             </p>
           </div>
 
-          <div className="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="bg-white border-2 border-slate-950 rounded-3xl p-6 sm:p-10 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-10">
             {/* Calculator Controls */}
             <div className="lg:col-span-7 space-y-8">
               {/* Step 1: Project Type */}
               <div>
-                <label className="text-xs font-bold text-amber-400 uppercase tracking-wider block mb-3">
+                <label className="text-xs font-black text-amber-700 uppercase tracking-wider block mb-3">
                   1. Select Construction Type
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -437,13 +435,13 @@ const Home = () => {
                         key={item.id}
                         type="button"
                         onClick={() => setProjectType(item.id)}
-                        className={`p-3 rounded-xl border text-left transition-all flex items-center gap-2 text-xs font-bold ${
+                        className={`p-3.5 rounded-2xl border-2 text-left transition-all flex items-center gap-2.5 text-xs font-extrabold ${
                           projectType === item.id
-                            ? "bg-amber-500 text-slate-950 border-amber-500 shadow-md"
-                            : "bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700"
+                            ? "bg-amber-400 text-slate-950 border-slate-950 shadow-md scale-102"
+                            : "bg-slate-50 text-slate-800 border-slate-200 hover:border-amber-300"
                         }`}
                       >
-                        <Icon className="text-base shrink-0" />
+                        <Icon className="text-base shrink-0 text-slate-950" />
                         <span>{item.name}</span>
                       </button>
                     );
@@ -454,10 +452,10 @@ const Home = () => {
               {/* Step 2: Square Footage */}
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <label className="text-xs font-bold text-amber-400 uppercase tracking-wider">
+                  <label className="text-xs font-black text-amber-700 uppercase tracking-wider">
                     2. Estimated Area (Sq. Ft.)
                   </label>
-                  <span className="text-amber-400 font-extrabold text-sm bg-slate-900 px-3 py-1 rounded-lg border border-slate-800">
+                  <span className="text-slate-950 font-black text-sm bg-amber-400 px-3.5 py-1 rounded-xl border border-slate-950 shadow-sm">
                     {sqft.toLocaleString()} sq ft
                   </span>
                 </div>
@@ -468,9 +466,9 @@ const Home = () => {
                   step="250"
                   value={sqft}
                   onChange={(e) => setSqft(Number(e.target.value))}
-                  className="w-full accent-amber-500 h-2 bg-slate-800 rounded-lg cursor-pointer"
+                  className="w-full accent-amber-500 h-3 bg-amber-200 rounded-lg cursor-pointer"
                 />
-                <div className="flex justify-between text-[11px] text-slate-400 mt-1">
+                <div className="flex justify-between text-[11px] font-extrabold text-slate-600 mt-1">
                   <span>500 sq ft</span>
                   <span>10,000 sq ft</span>
                   <span>25,000 sq ft</span>
@@ -479,27 +477,27 @@ const Home = () => {
 
               {/* Step 3: Finish Level */}
               <div>
-                <label className="text-xs font-bold text-amber-400 uppercase tracking-wider block mb-3">
+                <label className="text-xs font-black text-amber-700 uppercase tracking-wider block mb-3">
                   3. Quality & Material Grade
                 </label>
                 <div className="grid grid-cols-3 gap-3">
                   {[
                     { id: "standard", name: "Standard Grade", desc: "Reliable contractor grade materials" },
                     { id: "premium", name: "Executive Premium", desc: "High-durability architectural materials" },
-                    { id: "luxury", name: "Ultra Luxury Custom", desc: "Bespoke stone, smart home & imported finishes" },
+                    { id: "luxury", name: "Ultra Luxury Custom", desc: "Bespoke stone & imported finishes" },
                   ].map((level) => (
                     <button
                       key={level.id}
                       type="button"
                       onClick={() => setFinishLevel(level.id)}
-                      className={`p-3 rounded-xl border text-left transition-all ${
+                      className={`p-3 rounded-2xl border-2 text-left transition-all ${
                         finishLevel === level.id
-                          ? "bg-amber-500/10 border-amber-500 text-white"
-                          : "bg-slate-900 border-slate-800 text-slate-400 hover:border-slate-700"
+                          ? "bg-amber-100 border-slate-950 text-slate-950 font-black shadow-sm"
+                          : "bg-slate-50 border-slate-200 text-slate-600 hover:border-slate-300"
                       }`}
                     >
-                      <div className="text-xs font-bold text-white mb-0.5">{level.name}</div>
-                      <div className="text-[10px] text-slate-400 leading-tight">{level.desc}</div>
+                      <div className="text-xs font-extrabold text-slate-950 mb-0.5">{level.name}</div>
+                      <div className="text-[10px] text-slate-600 font-medium leading-tight">{level.desc}</div>
                     </button>
                   ))}
                 </div>
@@ -507,41 +505,41 @@ const Home = () => {
 
               {/* Step 4: Add-ons */}
               <div>
-                <label className="text-xs font-bold text-amber-400 uppercase tracking-wider block mb-3">
+                <label className="text-xs font-black text-amber-700 uppercase tracking-wider block mb-3">
                   4. Add-On Engineering Features
                 </label>
                 <div className="space-y-2">
-                  <label className="flex items-center justify-between p-3 bg-slate-900 border border-slate-800 rounded-xl cursor-pointer hover:border-slate-700">
-                    <span className="text-xs font-medium text-slate-200 flex items-center gap-2">
-                      <FaDraftingCompass className="text-amber-400" /> Architectural Blueprints & 3D BIM Modeling (+8%)
+                  <label className="flex items-center justify-between p-3.5 bg-slate-50 border-2 border-slate-200 rounded-2xl cursor-pointer hover:border-amber-400 font-bold text-xs text-slate-800">
+                    <span className="flex items-center gap-2">
+                      <FaDraftingCompass className="text-amber-600" /> Architectural Blueprints & 3D BIM Modeling (+8%)
                     </span>
                     <input
                       type="checkbox"
                       checked={includeBlueprints}
                       onChange={(e) => setIncludeBlueprints(e.target.checked)}
-                      className="w-4 h-4 accent-amber-500 rounded"
+                      className="w-4 h-4 accent-amber-500 rounded cursor-pointer"
                     />
                   </label>
-                  <label className="flex items-center justify-between p-3 bg-slate-900 border border-slate-800 rounded-xl cursor-pointer hover:border-slate-700">
-                    <span className="text-xs font-medium text-slate-200 flex items-center gap-2">
-                      <FaTools className="text-amber-400" /> Integrated Smart Automation & Security (+5%)
+                  <label className="flex items-center justify-between p-3.5 bg-slate-50 border-2 border-slate-200 rounded-2xl cursor-pointer hover:border-amber-400 font-bold text-xs text-slate-800">
+                    <span className="flex items-center gap-2">
+                      <FaTools className="text-amber-600" /> Integrated Smart Automation & Security (+5%)
                     </span>
                     <input
                       type="checkbox"
                       checked={includeSmartHome}
                       onChange={(e) => setIncludeSmartHome(e.target.checked)}
-                      className="w-4 h-4 accent-amber-500 rounded"
+                      className="w-4 h-4 accent-amber-500 rounded cursor-pointer"
                     />
                   </label>
-                  <label className="flex items-center justify-between p-3 bg-slate-900 border border-slate-800 rounded-xl cursor-pointer hover:border-slate-700">
-                    <span className="text-xs font-medium text-slate-200 flex items-center gap-2">
-                      <FaShieldAlt className="text-amber-400" /> LEED Gold Eco Materials & Solar Array (+7%)
+                  <label className="flex items-center justify-between p-3.5 bg-slate-50 border-2 border-slate-200 rounded-2xl cursor-pointer hover:border-amber-400 font-bold text-xs text-slate-800">
+                    <span className="flex items-center gap-2">
+                      <FaShieldAlt className="text-amber-600" /> LEED Gold Eco Materials & Solar Array (+7%)
                     </span>
                     <input
                       type="checkbox"
                       checked={includeGreenBuild}
                       onChange={(e) => setIncludeGreenBuild(e.target.checked)}
-                      className="w-4 h-4 accent-amber-500 rounded"
+                      className="w-4 h-4 accent-amber-500 rounded cursor-pointer"
                     />
                   </label>
                 </div>
@@ -549,37 +547,35 @@ const Home = () => {
             </div>
 
             {/* Estimated Output Panel */}
-            <div className="lg:col-span-5 bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+            <div className="lg:col-span-5 bg-gradient-to-b from-amber-400 to-amber-500 text-slate-950 border-2 border-slate-950 rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xl">
               <div className="space-y-4">
-                <div className="text-xs uppercase tracking-widest text-slate-400 font-bold border-b border-slate-800 pb-3 flex items-center justify-between">
+                <div className="text-xs uppercase tracking-widest text-slate-950 font-black border-b-2 border-slate-950/20 pb-3 flex items-center justify-between">
                   <span>Estimated Total Budget</span>
-                  <span className="text-amber-400 font-normal">Real-Time Calculation</span>
+                  <span className="bg-slate-950 text-amber-300 font-extrabold px-2 py-0.5 rounded text-[10px]">Live Calculation</span>
                 </div>
 
-                <div className="bg-slate-950 p-6 rounded-2xl border border-amber-500/30 text-center space-y-2">
-                  <div className="text-xs text-slate-400 uppercase font-semibold">Estimated Cost Range</div>
-                  <div className="text-3xl sm:text-4xl font-black text-amber-400">
+                <div className="bg-white p-6 rounded-2xl border-2 border-slate-950 text-center space-y-2 shadow-inner">
+                  <div className="text-xs text-slate-700 uppercase font-extrabold">Estimated Cost Range</div>
+                  <div className="text-3xl sm:text-4xl font-black text-slate-950">
                     ${estimate.min.toLocaleString()} - ${estimate.max.toLocaleString()}
                   </div>
-                  <div className="text-[11px] text-slate-400 pt-1">
+                  <div className="text-[11px] text-slate-600 font-semibold pt-1">
                     Includes estimated labor, framing, materials & permit management.
                   </div>
                 </div>
 
-                <div className="space-y-2 text-xs text-slate-300">
-                  <div className="flex justify-between py-1 border-b border-slate-800">
-                    <span className="text-slate-400">Target Area:</span>
-                    <span className="font-bold text-white">{sqft.toLocaleString()} sq ft</span>
+                <div className="space-y-2 text-xs font-bold text-slate-950">
+                  <div className="flex justify-between py-1 border-b border-slate-950/10">
+                    <span>Target Area:</span>
+                    <span>{sqft.toLocaleString()} sq ft</span>
                   </div>
-                  <div className="flex justify-between py-1 border-b border-slate-800">
-                    <span className="text-slate-400">Avg Cost / Sq. Ft.:</span>
-                    <span className="font-bold text-white">
-                      ${Math.round((estimate.min + estimate.max) / 2 / sqft)} / sq ft
-                    </span>
+                  <div className="flex justify-between py-1 border-b border-slate-950/10">
+                    <span>Avg Cost / Sq. Ft.:</span>
+                    <span>${Math.round((estimate.min + estimate.max) / 2 / sqft)} / sq ft</span>
                   </div>
-                  <div className="flex justify-between py-1 border-b border-slate-800">
-                    <span className="text-slate-400">Material Standard:</span>
-                    <span className="font-bold text-amber-400 capitalize">{finishLevel} Grade</span>
+                  <div className="flex justify-between py-1 border-b border-slate-950/10">
+                    <span>Material Standard:</span>
+                    <span className="capitalize">{finishLevel} Grade</span>
                   </div>
                 </div>
               </div>
@@ -588,12 +584,12 @@ const Home = () => {
                 <button
                   type="button"
                   onClick={handleApplyEstimate}
-                  className="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3.5 rounded-xl transition-all shadow-lg text-sm flex items-center justify-center gap-2"
+                  className="w-full bg-slate-950 hover:bg-slate-800 text-amber-300 font-black py-4 rounded-2xl transition-all shadow-lg text-xs uppercase tracking-wider flex items-center justify-center gap-2"
                 >
-                  <FaCheckCircle /> Transfer Estimate To Consultation Request &rarr;
+                  <FaCheckCircle className="text-amber-400" /> Apply Estimate To Booking Form &rarr;
                 </button>
-                <div className="text-[11px] text-slate-400 text-center">
-                  *Disclaimer: Final engineering estimates are subject to site survey and blueprint inspection.
+                <div className="text-[11px] text-slate-900 font-semibold text-center">
+                  *Final estimates are subject to site survey and blueprint inspection.
                 </div>
               </div>
             </div>
@@ -605,13 +601,13 @@ const Home = () => {
       <section className="py-20 max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="space-y-2 max-w-2xl">
-            <div className="text-amber-600 font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+            <div className="text-amber-600 font-black text-xs uppercase tracking-widest flex items-center gap-2 bg-amber-100 w-fit px-3 py-1 rounded-full border border-amber-300">
               <FaBuilding /> Our Work & Portfolio
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-950">
               Featured Construction & Rebuild Projects
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base">
+            <p className="text-slate-700 text-sm sm:text-base font-medium">
               Explore our recent commercial, residential, and structural renovation developments.
             </p>
           </div>
@@ -628,10 +624,10 @@ const Home = () => {
               <button
                 key={btn.id}
                 onClick={() => setActiveFilter(btn.id)}
-                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+                className={`px-4 py-2.5 rounded-xl text-xs font-black transition-all ${
                   activeFilter === btn.id
-                    ? "bg-slate-900 text-amber-400 shadow-md"
-                    : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-100"
+                    ? "bg-amber-500 text-slate-950 border-2 border-slate-950 shadow-md"
+                    : "bg-white border-2 border-slate-200 text-slate-700 hover:bg-amber-50"
                 }`}
               >
                 {btn.label}
@@ -646,7 +642,7 @@ const Home = () => {
             filteredProjects.map((project) => (
               <div
                 key={project._id}
-                className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white rounded-3xl overflow-hidden border-2 border-slate-200 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="relative h-56 overflow-hidden">
@@ -655,24 +651,24 @@ const Home = () => {
                       alt={project.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-amber-400 font-extrabold text-[11px] px-3 py-1 rounded-full uppercase tracking-wider">
+                    <div className="absolute top-3 left-3 bg-slate-950 text-amber-300 font-extrabold text-[11px] px-3 py-1 rounded-full uppercase tracking-wider shadow">
                       {project.type}
                     </div>
                     {project.offer && (
-                      <div className="absolute top-3 right-3 bg-amber-500 text-slate-950 font-black text-[11px] px-2.5 py-1 rounded-full">
-                        Featured Project
+                      <div className="absolute top-3 right-3 bg-amber-400 text-slate-950 font-black text-[11px] px-3 py-1 rounded-full border border-slate-950 shadow">
+                        Featured Build
                       </div>
                     )}
                   </div>
 
                   <div className="p-6 space-y-3">
-                    <h3 className="text-lg font-bold text-slate-900 line-clamp-1 group-hover:text-amber-600 transition-colors">
+                    <h3 className="text-lg font-black text-slate-950 line-clamp-1 group-hover:text-amber-600 transition-colors">
                       {project.name}
                     </h3>
-                    <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed font-medium">
                       {project.description}
                     </p>
-                    <div className="text-xs text-slate-600 font-semibold flex items-center gap-1">
+                    <div className="text-xs text-slate-700 font-bold flex items-center gap-1.5">
                       <FaRulerCombined className="text-amber-500" />
                       <span>{project.address}</span>
                     </div>
@@ -681,14 +677,14 @@ const Home = () => {
 
                 <div className="p-6 pt-0 border-t border-slate-100 flex items-center justify-between mt-4">
                   <div>
-                    <div className="text-[10px] text-slate-400 uppercase font-bold">Project Value</div>
-                    <div className="text-base font-extrabold text-slate-900">
+                    <div className="text-[10px] text-slate-500 font-extrabold uppercase">Project Value</div>
+                    <div className="text-lg font-black text-slate-950">
                       ${project.regularPrice?.toLocaleString()}
                     </div>
                   </div>
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white font-bold text-xs px-4 py-2 rounded-xl transition-colors"
+                    className="bg-amber-400 hover:bg-amber-500 text-slate-950 font-black text-xs px-4 py-2.5 rounded-xl border border-slate-950 transition-colors uppercase tracking-wider shadow"
                   >
                     View Specs
                   </button>
@@ -696,22 +692,22 @@ const Home = () => {
               </div>
             ))
           ) : (
-            <p className="text-slate-500 col-span-3 text-center py-10">No projects found for this category.</p>
+            <p className="text-slate-500 col-span-3 text-center py-10 font-bold">No projects found for this category.</p>
           )}
         </div>
       </section>
 
       {/* OUR APPROACH TO WEBSITE & REDESIGN PROJECTS */}
-      <section id="approach" className="py-20 bg-slate-100 border-y border-slate-200">
+      <section id="approach" className="py-20 bg-amber-100/60 border-y-2 border-amber-300">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-            <span className="text-amber-600 font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2">
-              <FaDraftingCompass /> Professional Approach
+            <span className="text-amber-800 font-black text-xs uppercase tracking-widest flex items-center justify-center gap-2 bg-amber-300/80 px-4 py-1.5 rounded-full border border-amber-400 w-fit mx-auto">
+              <FaDraftingCompass /> Professional Methodology
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-950">
               Our Methodology For Rebuilding & Redesigning Existing Websites
             </h2>
-            <p className="text-slate-600 text-base">
+            <p className="text-slate-800 text-base font-medium">
               Whether rebuilding an architectural physical property or transforming an existing digital web platform, Apex applies a rigorous 5-stage engineering blueprint.
             </p>
           </div>
@@ -745,83 +741,83 @@ const Home = () => {
                 desc: "Launching the upgraded platform with continuous monitoring and instant customer engagement.",
               },
             ].map((st) => (
-              <div key={st.step} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3 relative">
-                <div className="text-3xl font-black text-amber-500/30">{st.step}</div>
-                <h3 className="text-sm font-bold text-slate-900">{st.title}</h3>
-                <p className="text-xs text-slate-500 leading-relaxed">{st.desc}</p>
+              <div key={st.step} className="bg-white p-6 rounded-3xl border-2 border-amber-200 shadow-sm space-y-3 relative hover:border-amber-400 transition-all">
+                <div className="text-3xl font-black text-amber-500">{st.step}</div>
+                <h3 className="text-sm font-black text-slate-950">{st.title}</h3>
+                <p className="text-xs text-slate-600 leading-relaxed font-medium">{st.desc}</p>
               </div>
             ))}
           </div>
 
           {/* Before & After Case Studies */}
-          <div className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-lg space-y-8">
-            <div className="border-b border-slate-200 pb-6">
-              <h3 className="text-2xl font-bold text-slate-900">
+          <div className="bg-white p-8 sm:p-12 rounded-3xl border-2 border-slate-950 shadow-xl space-y-8">
+            <div className="border-b-2 border-slate-200 pb-6">
+              <h3 className="text-2xl font-black text-slate-950">
                 Relevant Examples: Redesign & Rebuilding Case Studies
               </h3>
-              <p className="text-slate-600 text-sm mt-1">
+              <p className="text-slate-700 text-sm font-semibold mt-1">
                 Real results from our website & architectural modernization projects.
               </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Case 1 */}
-              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4">
-                <div className="bg-amber-500 text-slate-950 font-black text-[11px] px-2.5 py-1 rounded-md inline-block uppercase">
+              <div className="bg-amber-50 p-6 rounded-2xl border-2 border-amber-300 space-y-4">
+                <div className="bg-amber-400 text-slate-950 font-black text-[11px] px-3 py-1 rounded-full inline-block uppercase shadow-sm">
                   Website & Digital Rebuild
                 </div>
-                <h4 className="text-base font-bold text-slate-900">Legacy Real Estate to Modern Construction Hub</h4>
-                <div className="space-y-2 text-xs text-slate-600">
-                  <div className="p-2.5 bg-red-50 text-red-700 rounded-lg border border-red-200">
-                    <strong>Before:</strong> Cluttered generic template, poor mobile experience, slow response times.
+                <h4 className="text-base font-black text-slate-950">Legacy Real Estate to Modern Construction Hub</h4>
+                <div className="space-y-2 text-xs text-slate-700 font-medium">
+                  <div className="p-3 bg-red-100 text-red-900 rounded-xl border border-red-300 font-semibold">
+                    <strong className="block text-red-950 font-black">Before:</strong> Cluttered generic template, poor mobile experience, slow response times.
                   </div>
-                  <div className="p-2.5 bg-green-50 text-green-800 rounded-lg border border-green-200">
-                    <strong>After:</strong> High-performance React app with instant quote estimator & rich project portfolio.
+                  <div className="p-3 bg-emerald-100 text-emerald-950 rounded-xl border border-emerald-300 font-semibold">
+                    <strong className="block text-emerald-950 font-black">After:</strong> High-performance React app with instant quote estimator & rich project portfolio.
                   </div>
                 </div>
-                <div className="pt-2 text-xs font-bold text-slate-800 flex items-center justify-between border-t border-slate-200">
+                <div className="pt-2 text-xs font-black text-slate-950 flex items-center justify-between border-t border-amber-200">
                   <span>Client Lead Engagement:</span>
-                  <span className="text-amber-600 font-extrabold">+240% Growth</span>
+                  <span className="text-emerald-700 font-black text-sm">+240% Growth</span>
                 </div>
               </div>
 
               {/* Case 2 */}
-              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4">
-                <div className="bg-amber-500 text-slate-950 font-black text-[11px] px-2.5 py-1 rounded-md inline-block uppercase">
+              <div className="bg-amber-50 p-6 rounded-2xl border-2 border-amber-300 space-y-4">
+                <div className="bg-amber-400 text-slate-950 font-black text-[11px] px-3 py-1 rounded-full inline-block uppercase shadow-sm">
                   Commercial Facility Overhaul
                 </div>
-                <h4 className="text-base font-bold text-slate-900">Historic Headquarters Modernization</h4>
-                <div className="space-y-2 text-xs text-slate-600">
-                  <div className="p-2.5 bg-red-50 text-red-700 rounded-lg border border-red-200">
-                    <strong>Before:</strong> High energy losses, outdated floor plan, decaying masonry facade.
+                <h4 className="text-base font-black text-slate-950">Historic Headquarters Modernization</h4>
+                <div className="space-y-2 text-xs text-slate-700 font-medium">
+                  <div className="p-3 bg-red-100 text-red-900 rounded-xl border border-red-300 font-semibold">
+                    <strong className="block text-red-950 font-black">Before:</strong> High energy losses, outdated floor plan, decaying masonry facade.
                   </div>
-                  <div className="p-2.5 bg-green-50 text-green-800 rounded-lg border border-green-200">
-                    <strong>After:</strong> Seismic retrofitting, glass curtain wall facade, and LEED Gold certification.
+                  <div className="p-3 bg-emerald-100 text-emerald-950 rounded-xl border border-emerald-300 font-semibold">
+                    <strong className="block text-emerald-950 font-black">After:</strong> Seismic retrofitting, glass curtain wall facade, and LEED Gold certification.
                   </div>
                 </div>
-                <div className="pt-2 text-xs font-bold text-slate-800 flex items-center justify-between border-t border-slate-200">
+                <div className="pt-2 text-xs font-black text-slate-950 flex items-center justify-between border-t border-amber-200">
                   <span>Energy Savings:</span>
-                  <span className="text-amber-600 font-extrabold">-42% Utility Cost</span>
+                  <span className="text-emerald-700 font-black text-sm">-42% Utility Cost</span>
                 </div>
               </div>
 
               {/* Case 3 */}
-              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4">
-                <div className="bg-amber-500 text-slate-950 font-black text-[11px] px-2.5 py-1 rounded-md inline-block uppercase">
+              <div className="bg-amber-50 p-6 rounded-2xl border-2 border-amber-300 space-y-4">
+                <div className="bg-amber-400 text-slate-950 font-black text-[11px] px-3 py-1 rounded-full inline-block uppercase shadow-sm">
                   Residential Eco-Remodel
                 </div>
-                <h4 className="text-base font-bold text-slate-900">Malibu Cliffside Residence Rebuild</h4>
-                <div className="space-y-2 text-xs text-slate-600">
-                  <div className="p-2.5 bg-red-50 text-red-700 rounded-lg border border-red-200">
-                    <strong>Before:</strong> Aging wood frame structure susceptible to coastal erosion.
+                <h4 className="text-base font-black text-slate-950">Malibu Cliffside Residence Rebuild</h4>
+                <div className="space-y-2 text-xs text-slate-700 font-medium">
+                  <div className="p-3 bg-red-100 text-red-900 rounded-xl border border-red-300 font-semibold">
+                    <strong className="block text-red-950 font-black">Before:</strong> Aging wood frame structure susceptible to coastal erosion.
                   </div>
-                  <div className="p-2.5 bg-green-50 text-green-800 rounded-lg border border-green-200">
-                    <strong>After:</strong> Cantilevered concrete foundation, smart glass walls, and infinity deck.
+                  <div className="p-3 bg-emerald-100 text-emerald-950 rounded-xl border border-emerald-300 font-semibold">
+                    <strong className="block text-emerald-950 font-black">After:</strong> Cantilevered concrete foundation, smart glass walls, and infinity deck.
                   </div>
                 </div>
-                <div className="pt-2 text-xs font-bold text-slate-800 flex items-center justify-between border-t border-slate-200">
+                <div className="pt-2 text-xs font-black text-slate-950 flex items-center justify-between border-t border-amber-200">
                   <span>Property Value Increase:</span>
-                  <span className="text-amber-600 font-extrabold">+185% Appraised Value</span>
+                  <span className="text-emerald-700 font-black text-sm">+185% Appraised Value</span>
                 </div>
               </div>
             </div>
@@ -832,10 +828,10 @@ const Home = () => {
       {/* TESTIMONIALS SECTION */}
       <section className="py-20 max-w-7xl mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="text-amber-600 font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2">
+          <div className="text-amber-700 font-black text-xs uppercase tracking-widest flex items-center justify-center gap-2 bg-amber-100 w-fit mx-auto px-4 py-1.5 rounded-full border border-amber-300">
             <FaStar className="text-amber-500" /> Client Recommendations
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-950">
             Trusted By Property Owners & Developers
           </h2>
         </div>
@@ -864,20 +860,20 @@ const Home = () => {
               rating: 5,
             },
           ].map((t, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-2xl border border-slate-200 shadow-md space-y-4 flex flex-col justify-between">
+            <div key={idx} className="bg-white p-8 rounded-3xl border-2 border-amber-200 shadow-md space-y-4 flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="flex gap-1 text-amber-500 text-sm">
                   {[...Array(t.rating)].map((_, i) => (
                     <FaStar key={i} />
                   ))}
                 </div>
-                <p className="text-sm text-slate-600 italic leading-relaxed">
+                <p className="text-sm text-slate-700 font-medium italic leading-relaxed">
                   "{t.quote}"
                 </p>
               </div>
               <div className="pt-4 border-t border-slate-100">
-                <div className="font-bold text-slate-900 text-sm">{t.author}</div>
-                <div className="text-xs text-amber-600 font-semibold">{t.role}</div>
+                <div className="font-black text-slate-950 text-sm">{t.author}</div>
+                <div className="text-xs text-amber-700 font-extrabold">{t.role}</div>
               </div>
             </div>
           ))}
@@ -885,108 +881,108 @@ const Home = () => {
       </section>
 
       {/* CONSULTATION & BOOKING FORM */}
-      <section id="consultation" className="py-20 bg-slate-900 text-white">
+      <section id="consultation" className="py-20 bg-amber-400 text-slate-950 border-t-4 border-slate-950">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 space-y-6">
-            <span className="bg-amber-500/20 text-amber-400 font-bold text-xs uppercase px-3 py-1 rounded-full border border-amber-500/30">
+            <span className="bg-slate-950 text-amber-300 font-extrabold text-xs uppercase px-4 py-1.5 rounded-full shadow">
               Get In Touch
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-950 leading-tight">
               Ready to Start Your Construction or Redesign Project?
             </h2>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-900 font-semibold text-sm sm:text-base leading-relaxed">
               Schedule a free on-site consultation or request a custom engineering proposal. Our senior project team will review your specifications and get back to you within 24 hours.
             </p>
 
-            <div className="space-y-4 text-sm text-slate-300 pt-2">
+            <div className="space-y-4 text-sm text-slate-950 font-bold pt-2">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-amber-500 text-slate-950 rounded-xl flex items-center justify-center font-bold">
+                <div className="w-10 h-10 bg-slate-950 text-amber-300 rounded-xl flex items-center justify-center font-black">
                   <FaPhoneAlt />
                 </div>
                 <div>
-                  <div className="text-xs text-slate-400">Direct Hotline:</div>
-                  <div className="text-white font-bold text-base">1-800-555-APEX (2739)</div>
+                  <div className="text-xs text-slate-800 uppercase font-extrabold">Direct Hotline:</div>
+                  <div className="text-slate-950 font-black text-base">1-800-555-APEX (2739)</div>
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-amber-500 text-slate-950 rounded-xl flex items-center justify-center font-bold">
+                <div className="w-10 h-10 bg-slate-950 text-amber-300 rounded-xl flex items-center justify-center font-black">
                   <FaEnvelope />
                 </div>
                 <div>
-                  <div className="text-xs text-slate-400">Inquiry Email:</div>
-                  <div className="text-white font-bold text-base">estimates@apexbuild.com</div>
+                  <div className="text-xs text-slate-800 uppercase font-extrabold">Inquiry Email:</div>
+                  <div className="text-slate-950 font-black text-base">estimates@apexbuild.com</div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Form Card */}
-          <div className="lg:col-span-7 bg-slate-950 border border-slate-800 p-6 sm:p-10 rounded-3xl shadow-2xl">
+          <div className="lg:col-span-7 bg-white border-2 border-slate-950 p-6 sm:p-10 rounded-3xl shadow-2xl">
             {formSubmitted ? (
               <div className="text-center py-12 space-y-4">
-                <div className="w-16 h-16 bg-amber-500 text-slate-950 rounded-full flex items-center justify-center text-3xl mx-auto font-black">
+                <div className="w-16 h-16 bg-amber-400 text-slate-950 rounded-full flex items-center justify-center text-3xl mx-auto font-black border-2 border-slate-950">
                   ✓
                 </div>
-                <h3 className="text-2xl font-bold text-white">Consultation Request Received!</h3>
-                <p className="text-slate-300 text-sm max-w-md mx-auto">
-                  Thank you, <strong className="text-amber-400">{formData.name}</strong>. Our chief estimator has received your details and will contact you shortly to schedule your site assessment.
+                <h3 className="text-2xl font-black text-slate-950">Consultation Request Received!</h3>
+                <p className="text-slate-700 font-medium text-sm max-w-md mx-auto">
+                  Thank you, <strong className="text-amber-700">{formData.name}</strong>. Our chief estimator has received your details and will contact you shortly to schedule your site assessment.
                 </p>
                 <button
                   onClick={() => setFormSubmitted(false)}
-                  className="bg-slate-800 hover:bg-slate-700 text-white font-bold px-6 py-2.5 rounded-xl text-xs"
+                  className="bg-slate-950 hover:bg-slate-800 text-amber-300 font-black px-6 py-3 rounded-xl text-xs uppercase"
                 >
                   Submit Another Inquiry
                 </button>
               </div>
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-4">
-                <h3 className="text-xl font-bold text-white mb-2 border-b border-slate-800 pb-3">
+                <h3 className="text-xl font-black text-slate-950 mb-2 border-b-2 border-slate-200 pb-3">
                   Request Free On-Site Consultation
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-xs font-bold text-slate-300 block mb-1">Your Name *</label>
+                    <label className="text-xs font-black text-slate-900 block mb-1">Your Name *</label>
                     <input
                       type="text"
                       required
                       placeholder="e.g. John Smith"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-amber-400"
+                      className="w-full bg-slate-50 border-2 border-slate-200 rounded-xl p-3 text-xs text-slate-950 font-medium focus:outline-none focus:border-amber-500"
                     />
                   </div>
                   <div>
-                    <label className="text-xs font-bold text-slate-300 block mb-1">Email Address *</label>
+                    <label className="text-xs font-black text-slate-900 block mb-1">Email Address *</label>
                     <input
                       type="email"
                       required
                       placeholder="e.g. john@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-amber-400"
+                      className="w-full bg-slate-50 border-2 border-slate-200 rounded-xl p-3 text-xs text-slate-950 font-medium focus:outline-none focus:border-amber-500"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-xs font-bold text-slate-300 block mb-1">Phone Number</label>
+                    <label className="text-xs font-black text-slate-900 block mb-1">Phone Number</label>
                     <input
                       type="tel"
                       placeholder="(555) 000-0000"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-amber-400"
+                      className="w-full bg-slate-50 border-2 border-slate-200 rounded-xl p-3 text-xs text-slate-950 font-medium focus:outline-none focus:border-amber-500"
                     />
                   </div>
                   <div>
-                    <label className="text-xs font-bold text-slate-300 block mb-1">Project Category</label>
+                    <label className="text-xs font-black text-slate-900 block mb-1">Project Category</label>
                     <select
                       value={formData.serviceType}
                       onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
-                      className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-amber-400"
+                      className="w-full bg-slate-50 border-2 border-slate-200 rounded-xl p-3 text-xs text-slate-950 font-medium focus:outline-none focus:border-amber-500"
                     >
                       <option>Commercial Construction</option>
                       <option>Residential Custom Build</option>
@@ -1000,40 +996,40 @@ const Home = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-xs font-bold text-slate-300 block mb-1">Budget Expectation</label>
+                    <label className="text-xs font-black text-slate-900 block mb-1">Budget Expectation</label>
                     <input
                       type="text"
                       placeholder="e.g. $250,000 - $500,000"
                       value={formData.budget}
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                      className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-amber-400"
+                      className="w-full bg-slate-50 border-2 border-slate-200 rounded-xl p-3 text-xs text-slate-950 font-medium focus:outline-none focus:border-amber-500"
                     />
                   </div>
                   <div>
-                    <label className="text-xs font-bold text-slate-300 block mb-1">Target Start Date</label>
+                    <label className="text-xs font-black text-slate-900 block mb-1">Target Start Date</label>
                     <input
                       type="date"
                       value={formData.startDate}
                       onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
-                      className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-amber-400"
+                      className="w-full bg-slate-50 border-2 border-slate-200 rounded-xl p-3 text-xs text-slate-950 font-medium focus:outline-none focus:border-amber-500"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-xs font-bold text-slate-300 block mb-1">Project Scope / Blueprint Notes</label>
+                  <label className="text-xs font-black text-slate-900 block mb-1">Project Scope / Blueprint Notes</label>
                   <textarea
                     rows="3"
                     placeholder="Provide details about your project location, square footage, requirements..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-amber-400"
+                    className="w-full bg-slate-50 border-2 border-slate-200 rounded-xl p-3 text-xs text-slate-950 font-medium focus:outline-none focus:border-amber-500"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold py-3.5 rounded-xl transition-all shadow-lg text-sm uppercase tracking-wider"
+                  className="w-full bg-slate-950 hover:bg-slate-800 text-amber-300 font-black py-4 rounded-xl transition-all shadow-lg text-xs uppercase tracking-wider"
                 >
                   Submit Consultation Request
                 </button>
@@ -1045,11 +1041,11 @@ const Home = () => {
 
       {/* PROJECT DETAILS MODAL */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white text-slate-900 max-w-2xl w-full rounded-3xl overflow-hidden shadow-2xl space-y-6 relative max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white text-slate-900 max-w-2xl w-full rounded-3xl overflow-hidden shadow-2xl space-y-6 relative max-h-[90vh] overflow-y-auto border-2 border-slate-950">
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 bg-slate-900 text-white p-2 rounded-full hover:bg-amber-500 hover:text-slate-950 transition-colors z-10"
+              className="absolute top-4 right-4 bg-slate-950 text-white p-2 rounded-full hover:bg-amber-400 hover:text-slate-950 transition-colors z-10"
             >
               <FaTimes />
             </button>
@@ -1062,21 +1058,21 @@ const Home = () => {
 
             <div className="p-6 space-y-4">
               <div className="flex items-center justify-between">
-                <span className="bg-amber-500 text-slate-950 text-xs font-bold px-3 py-1 rounded-full uppercase">
+                <span className="bg-amber-400 text-slate-950 text-xs font-black px-3.5 py-1 rounded-full uppercase border border-slate-950">
                   {selectedProject.type}
                 </span>
-                <span className="text-lg font-black text-slate-900">
+                <span className="text-lg font-black text-slate-950">
                   Valuation: ${selectedProject.regularPrice?.toLocaleString()}
                 </span>
               </div>
 
-              <h3 className="text-2xl font-black text-slate-900">{selectedProject.name}</h3>
+              <h3 className="text-2xl font-black text-slate-950">{selectedProject.name}</h3>
 
-              <p className="text-sm text-slate-600 leading-relaxed">{selectedProject.description}</p>
+              <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">{selectedProject.description}</p>
 
-              <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs space-y-2">
-                <div className="font-bold text-slate-800">Key Engineering Highlights:</div>
-                <ul className="space-y-1 text-slate-600">
+              <div className="bg-amber-50 p-4 rounded-2xl border-2 border-amber-200 text-xs space-y-2">
+                <div className="font-black text-slate-950">Key Engineering Highlights:</div>
+                <ul className="space-y-1 text-slate-700 font-medium">
                   <li>• Structural Steel & Reinforced Concrete Foundation</li>
                   <li>• High-efficiency Glass Facade & Smart Energy Controls</li>
                   <li>• Delivered On-Schedule with Full OSHA Compliance</li>
@@ -1088,13 +1084,13 @@ const Home = () => {
                 <a
                   href="#consultation"
                   onClick={() => setSelectedProject(null)}
-                  className="flex-1 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 rounded-xl text-center text-xs"
+                  className="flex-1 bg-amber-400 hover:bg-amber-500 text-slate-950 font-black py-3 rounded-xl text-center text-xs border border-slate-950 uppercase tracking-wider"
                 >
                   Inquire For Similar Build
                 </a>
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold px-5 py-3 rounded-xl text-xs"
+                  className="bg-slate-200 hover:bg-slate-300 text-slate-900 font-bold px-5 py-3 rounded-xl text-xs"
                 >
                   Close
                 </button>
